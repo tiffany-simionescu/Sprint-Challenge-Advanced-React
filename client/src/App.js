@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import PlayerData from './components/PlayerData';
-import DarkModeSwitch from './components/DarkModeSwitch';
+import PlayerData from './components/PlayerData.js';
+import DarkModeSwitch from './components/DarkModeSwitch.js';
 
 function App() {
   return (

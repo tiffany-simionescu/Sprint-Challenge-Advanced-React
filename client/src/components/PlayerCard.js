@@ -26,7 +26,7 @@ function PlayerCard(props) {
         <OtherText>Searches: {props.searches}</OtherText>
       </div>
     </Card>
-  );
+  )
 }
 
 export default PlayerCard;

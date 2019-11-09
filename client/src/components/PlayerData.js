@@ -7,25 +7,37 @@ class PlayerData extends React.Component {
     super();
     this._isMounted = false;
     this.state = {
-      players: []
+      players: [],
     }
   }
+
+  // componentDidMount() {
+  //   axios
+  //     .get(`http://localhost:5000/api/players`)
+  //     .then(res => {
+  //       // console.log(res.data);
+  //       this.setState({
+  //         players: res.data
+  //       })
+  //     })
+  //     .catch(err => console.log(err)
+  //     );
+  //   }
 
   componentDidMount() {
     this._isMounted = true;
     this.setState({isMounted: true}, () => {
-      axios.get(`http://localhost:5000/api/players`)
-        .then(res => {
-          // console.log(res);
-          if(this._isMounted) {
-            this.setState({
-              players: res.data
-            });
-          }
-        })
-        .catch(err => console.log(err))
+        axios.get(`http://localhost:5000/api/players`)
+            .then( (res) => {
+              // console.log(res.data);
+                if(this._isMounted) {
+                    this.setState({ 
+                      players: res.data 
+                    });
+                }
+            } ).catch(err => console.log(err))
     });
-  }
+}
 
   componentWillUnmount() {
     this._isMounted = false;
@@ -36,12 +48,12 @@ class PlayerData extends React.Component {
       <div>
         {this.state.players.map(player => {
           return (
-            <PlayerCard
+            <PlayerCard 
               key={player.id}
               name={player.name}
               country={player.country}
               searches={player.searches}
-            />  
+            />
           );
         })}
       </div>
