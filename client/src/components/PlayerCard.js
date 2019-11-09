@@ -19,14 +19,14 @@ const OtherText = styled.h3`
 
 function PlayerCard(props) {
   return (
-    <Card>
-      <div key={props.id}>
-        <Name>Name: {props.name}</Name>
-        <OtherText>Country: {props.country}</OtherText>
-        <OtherText>Searches: {props.searches}</OtherText>
-      </div>
-    </Card>
-  )
+      <Card>
+        <div key={props.id}>
+          <Name>Name: {props.name}</Name>
+          <OtherText>Country: {props.country}</OtherText>
+          <OtherText>Searches: {props.searches}</OtherText>
+        </div>
+      </Card>
+  ) 
 }
 
 export default PlayerCard;

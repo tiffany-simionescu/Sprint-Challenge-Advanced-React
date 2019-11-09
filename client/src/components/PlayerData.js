@@ -45,7 +45,7 @@ class PlayerData extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="player-cards">
         {this.state.players.map(player => {
           return (
             <PlayerCard 
